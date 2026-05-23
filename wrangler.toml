@@ -1,3 +1,8 @@
 name = "agentprinciples-org"
 pages_build_output_dir = "./public"
 compatibility_date = "2026-05-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "agentprinciples-org"
+database_id = "f1763072-199a-4f8a-aaf6-05a10ba1b6bf"
