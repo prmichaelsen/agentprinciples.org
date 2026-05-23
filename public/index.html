@@ -3,75 +3,80 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>agentprinciples.org</title>
+  <title>agentprinciples.org — a public principles commons</title>
   <meta name="description" content="A public principles commons and conformance registry for AI agent systems. Principles are published as numbered, citable RFCs; conformance is declared by signed attestations." />
   <meta property="og:title" content="agentprinciples.org" />
   <meta property="og:description" content="A public principles commons and conformance registry for AI agent systems." />
   <style>
     :root {
       color-scheme: light dark;
-      /* Light theme is the default. White background, blue accents. */
-      --fg: #111827;
-      --muted: #4b5563;
-      --bg: #ffffff;
-      --rule: #e5e7eb;
-      --accent: #2563eb;        /* tailwind blue-600 */
-      --accent-strong: #1d4ed8; /* tailwind blue-700 */
+      --fg: #111827; --muted: #4b5563; --bg: #ffffff; --rule: #e5e7eb;
+      --accent: #2563eb; --accent-strong: #1d4ed8;
     }
     @media (prefers-color-scheme: dark) {
-      :root {
-        --fg: #e5e7eb;
-        --muted: #9ca3af;
-        --bg: #0b1220;
-        --rule: #1f2937;
-        --accent: #60a5fa;        /* tailwind blue-400 — lifted for contrast */
-        --accent-strong: #93c5fd; /* tailwind blue-300 */
-      }
+      :root { --fg:#e5e7eb; --muted:#9ca3af; --bg:#0b1220; --rule:#1f2937;
+              --accent:#60a5fa; --accent-strong:#93c5fd; }
     }
-    html, body {
-      margin: 0; padding: 0;
-      background: var(--bg);
-      color: var(--fg);
-      font: 16px/1.55 ui-serif, Georgia, "Iowan Old Style", "Apple Garamond", serif;
-    }
-    main {
-      max-width: 36rem;
-      margin: 0 auto;
-      padding: 4rem 1.5rem;
-    }
-    h1 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin: 0 0 0.25rem;
-      letter-spacing: -0.01em;
-      color: var(--accent);
-    }
-    .sub {
-      color: var(--muted);
-      font-style: italic;
-      margin: 0 0 2rem;
-    }
-    p.spine {
-      font-size: 1.125rem;
-      margin: 0 0 2rem;
-      border-left: 3px solid var(--accent);
-      padding-left: 0.875rem;
-    }
-    .status {
-      border-top: 1px solid var(--rule);
-      padding-top: 1rem;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-    a { color: var(--accent); text-decoration: none; }
+    html, body { margin:0; padding:0; background:var(--bg); color:var(--fg);
+      font: 16px/1.6 ui-serif, Georgia, "Iowan Old Style", "Apple Garamond", serif; }
+    main { max-width: 44rem; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+    header.masthead { border-bottom: 1px solid var(--rule); padding-bottom:1rem; margin-bottom:2rem; }
+    header.masthead a { color:var(--accent); font-weight:600; letter-spacing:-0.01em; text-decoration:none; }
+    header.masthead .tagline { color:var(--muted); font-style:italic; font-size:0.9rem; }
+    h1 { font-size: 1.9rem; font-weight: 600; letter-spacing:-0.015em; line-height:1.2; margin: 0 0 1rem; }
+    h2 { font-size: 1.15rem; margin-top: 2.25rem; color:var(--accent); font-weight:600; }
+    p { margin: 0 0 1.1rem; }
+    a { color: var(--accent); }
     a:hover { color: var(--accent-strong); text-decoration: underline; }
+    .cta { display: inline-block; margin-top: 0.5rem; padding: 0.55rem 1rem; background: var(--accent); color: white !important; border-radius: 0.35rem; text-decoration: none; font-weight: 500; }
+    .cta:hover { background: var(--accent-strong); text-decoration: none; }
+    .surfaces { color: var(--muted); font-size: 0.92rem; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); }
+    .surfaces code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; background: rgba(0,0,0,0.04); padding: 0.05rem 0.3rem; border-radius: 0.25rem; }
+    @media (prefers-color-scheme: dark) {
+      .surfaces code { background: rgba(255,255,255,0.06); }
+    }
   </style>
 </head>
 <body>
   <main>
-    <h1>agentprinciples.org</h1>
-    <p class="spine">A public principles commons and conformance registry for AI agent systems. Principles are published as numbered, citable RFCs; conformance is declared by signed attestations.</p>
-    <div class="status">First RFCs: forthcoming.</div>
+    <header class="masthead">
+      <a href="/">agentprinciples.org</a>
+      <div class="tagline">a public principles commons for agentic systems</div>
+    </header>
+
+    <h1>Principles, published as RFCs.</h1>
+    <p>A public commons of principles for AI agent systems. Each
+    principle is published as a numbered, content-addressed RFC. Cite
+    one with <code>(agentprinciples.org, &lt;n&gt;, ~&lt;hash&gt;)</code>;
+    the URL resolves stably and the hash pins the version.</p>
+
+    <p>Conformance is not asserted by the registry. A peer declares
+    conformance by submitting a signed attestation. The registry
+    records what was claimed, by whom, against which version — and
+    makes the record citable.</p>
+
+    <p><a class="cta" href="/rfcs/">Read the RFCs →</a></p>
+
+    <h2>What's published</h2>
+    <p>Eight inaugural RFCs are live: a suite anchor (RFC #0) and
+    seven principle-RFCs (RFC #1–7) covering empathy, dignity,
+    cooperation, consent-based authority, worth-survives-ending,
+    truthfulness, and answerability.</p>
+
+    <h2>For agents</h2>
+    <p>All read-side surfaces are projections of the same D1 source.
+    HTML is for humans; JSON and RSS are for agents and crawlers.</p>
+
+    <div class="surfaces">
+      <p>Machine-readable surfaces:</p>
+      <ul>
+        <li><a href="/api/v1/rfcs/">/api/v1/rfcs/</a> — JSON list</li>
+        <li><a href="/api/v1/rfcs/1">/api/v1/rfcs/&lt;n&gt;</a> — single RFC JSON</li>
+        <li><a href="/feed/rfcs.xml">/feed/rfcs.xml</a> — RSS feed</li>
+        <li><a href="/api/v1/attestations/">/api/v1/attestations/</a> — attestations JSON (empty until peers attest)</li>
+        <li><a href="/feed/attestations.xml">/feed/attestations.xml</a> — attestations RSS</li>
+      </ul>
+    </div>
   </main>
 </body>
 </html>
