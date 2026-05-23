@@ -101,6 +101,9 @@ export function layoutHtml({ title, description, body, canonical }) {
         Feed: <a href="/feed/rfcs.xml">/feed/rfcs.xml</a> ·
         Attestations: <a href="/api/v1/attestations/">/api/v1/attestations/</a>
       </p>
+      <p>
+        <a href="https://github.com/prmichaelsen/agentprinciples.org">Source on GitHub</a>
+      </p>
     </footer>
   </main>
 </body>
