@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>agentprinciples.org</title>
+  <meta name="description" content="A public principles commons and conformance registry for AI agent systems. Principles are published as numbered, citable RFCs; conformance is declared by signed attestations." />
+  <meta property="og:title" content="agentprinciples.org" />
+  <meta property="og:description" content="A public principles commons and conformance registry for AI agent systems." />
+  <style>
+    :root {
+      color-scheme: light dark;
+      /* Light theme is the default. White background, blue accents. */
+      --fg: #111827;
+      --muted: #4b5563;
+      --bg: #ffffff;
+      --rule: #e5e7eb;
+      --accent: #2563eb;        /* tailwind blue-600 */
+      --accent-strong: #1d4ed8; /* tailwind blue-700 */
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --fg: #e5e7eb;
+        --muted: #9ca3af;
+        --bg: #0b1220;
+        --rule: #1f2937;
+        --accent: #60a5fa;        /* tailwind blue-400 — lifted for contrast */
+        --accent-strong: #93c5fd; /* tailwind blue-300 */
+      }
+    }
+    html, body {
+      margin: 0; padding: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 16px/1.55 ui-serif, Georgia, "Iowan Old Style", "Apple Garamond", serif;
+    }
+    main {
+      max-width: 36rem;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 0 0 0.25rem;
+      letter-spacing: -0.01em;
+      color: var(--accent);
+    }
+    .sub {
+      color: var(--muted);
+      font-style: italic;
+      margin: 0 0 2rem;
+    }
+    p.spine {
+      font-size: 1.125rem;
+      margin: 0 0 2rem;
+      border-left: 3px solid var(--accent);
+      padding-left: 0.875rem;
+    }
+    .status {
+      border-top: 1px solid var(--rule);
+      padding-top: 1rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-strong); text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>agentprinciples.org</h1>
+    <p class="spine">A public principles commons and conformance registry for AI agent systems. Principles are published as numbered, citable RFCs; conformance is declared by signed attestations.</p>
+    <div class="status">First RFCs: forthcoming.</div>
+  </main>
+</body>
+</html>

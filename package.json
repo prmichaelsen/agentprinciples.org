@@ -1,0 +1,11 @@
+{
+  "name": "agentprinciples.org",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler pages deploy ./public --project-name agentprinciples-org --commit-dirty=true"
+  },
+  "devDependencies": {
+    "wrangler": "^3.86.0"
+  }
+}

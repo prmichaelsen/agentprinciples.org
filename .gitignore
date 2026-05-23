@@ -1,0 +1,29 @@
+# Node / TanStack
+node_modules/
+dist/
+.output/
+.nitro/
+.cache/
+.wrangler/
+.dev.vars
+.env
+.env.*
+!.env.example
+
+# Build artifacts
+*.log
+*.tsbuildinfo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Secrets — never check in
+agent/secrets/
+secrets/
+*.pem
+*.key
