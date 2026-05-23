@@ -57,11 +57,53 @@ export async function onRequestGet(context) {
     rfc.rfc_version
   )}</span> · published ${htmlEscape((rfc.created_at || "").slice(0, 10))}</div>`;
 
+  // Resolve prev/next RFC by rfc_number among active, non-superseded rows.
+  const [prevRow, nextRow] = await Promise.all([
+    env.DB.prepare(
+      `SELECT rfc_number FROM rfcs
+        WHERE rfc_number < ?
+          AND superseded_by_id IS NULL
+          AND status = 'active'
+        ORDER BY rfc_number DESC
+        LIMIT 1`
+    )
+      .bind(n)
+      .first(),
+    env.DB.prepare(
+      `SELECT rfc_number FROM rfcs
+        WHERE rfc_number > ?
+          AND superseded_by_id IS NULL
+          AND status = 'active'
+        ORDER BY rfc_number ASC
+        LIMIT 1`
+    )
+      .bind(n)
+      .first(),
+  ]);
+
+  const navParts = [];
+  if (prevRow) {
+    navParts.push(
+      `<a href="/rfcs/${htmlEscape(prevRow.rfc_number)}">← Previous RFC</a>`
+    );
+  }
+  navParts.push(`<a href="/rfcs/">All RFCs</a>`);
+  if (nextRow) {
+    navParts.push(
+      `<a href="/rfcs/${htmlEscape(nextRow.rfc_number)}">Next RFC →</a>`
+    );
+  }
+  const nav = `<nav class="rfc-nav" aria-label="RFC navigation">${navParts.join(
+    " · "
+  )}</nav>`;
+
   const body = `
   <h1>${htmlEscape(rfc.title)}</h1>
   ${meta}
   ${renderRfcBodyHtml(rfc)}
-  <p class="footer"><a href="/rfcs/">← all RFCs</a> · cite as: (agentprinciples.org, ${htmlEscape(
+  <hr class="section-divider" />
+  ${nav}
+  <p class="footer">cite as: (agentprinciples.org, ${htmlEscape(
     rfc.rfc_number
   )}, ~${htmlEscape(rfc.rfc_version)})</p>
   `;

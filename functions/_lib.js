@@ -73,6 +73,9 @@ export function layoutHtml({ title, description, body, canonical }) {
     .rfc-meta .version { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
     .verbatim { white-space: pre-wrap; font: 0.98rem/1.55 ui-serif, Georgia, serif; margin: 0 0 1.5rem; }
     .section-divider { margin: 2.5rem 0; border:none; border-top:1px solid var(--rule); }
+    .rfc-nav { display:flex; flex-wrap:wrap; gap:0.75rem 1.25rem; font-size:0.92rem; margin: 0 0 1.5rem; }
+    .rfc-nav a { color:var(--accent); text-decoration:none; }
+    .rfc-nav a:hover { text-decoration:underline; color:var(--accent-strong); }
     .rfc-list { list-style: none; padding: 0; }
     .rfc-list li { padding: 0.6rem 0; border-bottom: 1px solid var(--rule); }
     .rfc-list li:last-child { border-bottom: none; }
